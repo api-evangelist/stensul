@@ -1,0 +1,69 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://status.stensul.com/api/v2/summary.json (probed 2026-08-29),
+  https://stensul.com/our-integrations/api-endpoints/,
+  https://helpdesk.stensul.com/en/
+name: Stensul Lifecycle
+status_page:
+  present: true
+  url: https://status.stensul.com/
+  platform: Atlassian Statuspage
+  platform_evidence: CNAME dq9q5hgz2gzf.stspg-customer.com
+  machine_readable: true
+  machine_readable_url: https://status.stensul.com/api/v2/summary.json
+  http_status: 200
+  page_id: dq9q5hgz2gzf
+  page_name: Stensul
+  time_zone: America/New_York
+  components:
+  - Web UI
+  - Platform
+  - Email Deployment
+  - AWS ses-us-west-2
+  - Preview & Notification Emails
+  - Stensul Website
+  - SendGrid SMTP
+  note: >-
+    A real, first-party Statuspage with named service components and a public
+    JSON summary API. This is the strongest operational artifact Stensul
+    publishes.
+versioning_policy:
+  published: false
+  scheme: unknown
+  note: >-
+    No API versioning scheme is published. With no public reference for either
+    the Content API or the User API there is no version identifier, no version
+    header, and no documented URI version segment to record.
+deprecation_policy:
+  published: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  rfc8594: unknown
+  note: >-
+    No deprecation or sunset policy was found on stensul.com or in the Intercom
+    help center. No `Deprecation` pointer is emitted.
+sla:
+  published: false
+  note: >-
+    No public uptime commitment or SLA document. Stensul's pricing is
+    contact-sales only, so any SLA is likely contractual and non-public.
+changelog:
+  published: false
+  note: >-
+    No dated API changelog or release-notes feed was found. The Intercom help
+    center (helpdesk.stensul.com) exposes exactly one public collection
+    ("Integrations") and no changelog. Product announcements appear as blog posts
+    at https://stensul.com/blog/ and press releases at
+    https://stensul.com/category/press-releases/, but neither is a versioned
+    changelog and neither is emitted as a ChangeLog pointer.
+deprecated_operations: []
+deprecated_operations_note: >-
+  Cannot be derived — no OpenAPI or other machine-readable contract is published.
+pointers_emitted:
+- StatusPage
+pointers_withheld:
+- type: Deprecation
+  reason: no deprecation policy published
+- type: ChangeLog
+  reason: no dated changelog published

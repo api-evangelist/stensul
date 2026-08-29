@@ -1,0 +1,81 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://stensul.com/integrations/stensul-content-api/,
+  https://stensul.com/integrations/stensul-user-api/,
+  https://stensul.com/security-trust-center/
+name: Stensul Authentication
+derivable_from_spec: false
+derivable_note: >-
+  No OpenAPI or other machine-readable contract is published, so securitySchemes
+  could not be derived. Everything below is read from Stensul's own public
+  integration and security pages, which describe the auth model in prose without
+  naming a token endpoint, grant type, scope, or base URL.
+api_authentication:
+- api: Stensul Content API
+  scheme_type: oauth2
+  flow: client_credentials
+  flow_confidence: medium
+  flow_evidence: >-
+    Stensul describes it as "OAuth server-to-server authentication", which is
+    the client-credentials grant in all but name. The exact grant string, token
+    endpoint and token lifetime are not published.
+  token_endpoint: null
+  scopes_published: false
+  additional_controls:
+  - control: ip-allowlist
+    detail: >-
+      "IP address allowlists" — callers must originate from addresses registered
+      with Stensul. This is a hard gate on programmatic access: an agent or CI
+      job on an unregistered egress IP cannot call the API even with a valid
+      token.
+  source: https://stensul.com/integrations/stensul-content-api/
+- api: Stensul User API
+  scheme_type: oauth2
+  flow: client_credentials
+  flow_confidence: medium
+  flow_evidence: >-
+    Same "OAuth server-to-server authentication" language as the Content API.
+  token_endpoint: null
+  scopes_published: false
+  additional_controls:
+  - control: ip-allowlist
+    detail: IP address allowlists, as with the Content API.
+  - control: scim
+    detail: >-
+      Stensul states the User API "supports SCIM provisioning standards". The
+      SCIM version (2.0 vs 1.1), the schema URNs, and the
+      /ServiceProviderConfig endpoint are not published, and a probe of
+      app.stensul.com/scim/v2/ServiceProviderConfig returns the application's
+      SPA HTML shell rather than a SCIM document. Recorded as a vendor
+      assertion, not a verified conformance.
+  source: https://stensul.com/integrations/stensul-user-api/
+end_user_authentication:
+  note: >-
+    Distinct from API auth. Stensul's application supports enterprise SSO via
+    OAuth 2.0 / OpenID Connect and SAML 2.0, with published integration pages for
+    Okta, Microsoft Entra ID (Azure AD), Ping Identity, Duo and Google Workspace.
+    This is human sign-in to the product, not machine access to the APIs.
+  protocols:
+  - OAuth 2.0
+  - OpenID Connect
+  - SAML 2.0
+  identity_providers:
+  - name: Okta
+    url: https://stensul.com/integrations/stensul-okta-integration/
+  - name: Microsoft Entra ID / Azure AD
+    url: https://stensul.com/integrations/stensul-azure-ad-integration/
+  - name: Ping Identity
+    url: https://stensul.com/integrations/stensul-ping-identity-integration/
+  - name: Duo
+    url: https://stensul.com/integrations/stensul-duo-integration/
+  - name: Google Workspace
+    url: https://stensul.com/integrations/google-workplace-integration/
+  - name: SAML 2.0 (generic)
+    url: https://stensul.com/integrations/stensul-saml-integration/
+  source: https://stensul.com/security-trust-center/
+gaps:
+- No token endpoint URL published.
+- No grant type named explicitly.
+- No scope or permission reference published — scopes/ is therefore not written.
+- No credential-provisioning self-service; keys are issued through the account team.

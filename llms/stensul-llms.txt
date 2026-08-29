@@ -1,0 +1,36 @@
+# stensul.com llms.txt
+> Streamline email and landing page creation for enterprises with Stensul's Governed Creation™ Platform, enhancing speed, compliance, and collaboration through an AI-enabled platform that reduces bottlenecks and maintains brand integrity.
+
+- [Email Templates Platform](https://stensul.com/email-template): Offers customizable email templates for marketing automation platforms like Marketo and Pardot.
+- [Stensul Contact Page](https://stensul.com/contact): Provides contact information and resources for communication with Stensul.
+- [Stensul Blog](https://stensul.com/blog): Share insights on marketing technology, operations, and content creation strategies.
+- [Stensul Events & Webinars](https://stensul.com/events): Promote and inform about upcoming Stensul marketing events and webinars.
+- [Webinars Resource](https://stensul.com/resources/webinars): Offers on-demand webinars to educate about marketing, martech, and campaign management strategies.
+- [Dark Mode Color Checker](https://stensul.com/dark-mode-color-checker): Allows users to preview and verify color readability in Dark and Light modes for email design.
+- [Email Cost Calculator](https://stensul.com/stensul-cost-of-building-emails-calculator): Calculate and analyze email creation costs to optimize resource allocation and improve productivity.
+- [Frequently Asked Questions](https://stensul.com/faq): Explains how Stensul's Governed Creation™ platform improves email and landing page development with governance and efficiency.
+- [AI Email Toolkit](https://stensul.com/resource/stensul-expands-its-ai-powered-email-toolkit): Leverage AI-powered email creation tools to improve marketing efficiency and engagement.
+- [Marketing Resources](https://stensul.com/category/marketing): Provides marketing insights, resources, and tools to optimize marketing workflows and strategies.
+- [2026 MarTech Outlook](https://stensul.com/resource/2026-martech-outlook): Analyzes 2026 MarTech trends emphasizing AI investments and internal enablement strategies.
+- [About Stensul](https://stensul.com/about): Showcases Stensul's email and landing page creation platform and company overview.
+- [Marketing & Email Guides](https://stensul.com/resources/guides): Provides comprehensive marketing and email creation guides to improve campaigns and operational efficiency.
+- [Landing Page Builder](https://stensul.com/landing-page-builder): Promote a platform for fast, governed, and scalable landing page creation without coding.
+- [Product News](https://stensul.com/category/product-news): Showcase the latest product updates and innovations at Stensul.
+- [Workflow Audit Services](https://stensul.com/workflow-audit): Showcase workflow audits and optimization services for marketing teams to improve speed and efficiency.
+- [Customer Success & Support](https://stensul.com/customer-success): Highlights Stensul's customer success, support services, and subscription packages for email creation and marketing efficiency.
+- [Security & Trust Center](https://stensul.com/security-trust-center): Provides security, compliance, and trust information for Stensul platform.
+- [Marketing Workflow Best Practices](https://stensul.com/category/best-practices): Provides best practices and insights on marketing workflows and efficiency improvements.
+- [Stensul Careers](https://stensul.com/careers): Promote career opportunities and showcase company culture at Stensul.
+- [Generative AI Insights](https://stensul.com/category/generative-ai): Showcase Stensul's insights and innovations in generative AI for marketing and email creation.
+- [Governed Creation Platform](https://stensul.com): Promote Governed Creation™ platform for faster, compliant email and landing page marketing workflows.
+- [Stensul Pricing](https://stensul.com/stensul-pricing-request): Promote tailored enterprise email and landing page creation solutions with flexible pricing.
+- [Stensul Integrations](https://stensul.com/integrations): Showcase integrations between Stensul and various marketing, content, and SSO platforms to streamline email creation.
+- [Enterprise Email Builder](https://stensul.com/email-builder): Leverage scalable, compliant enterprise email creation with guided workflows and AI-enhanced tools.
+- [Success Stories](https://stensul.com/resources/success-stories): Showcase customer success stories to demonstrate Stensul's email creation and marketing automation impact.
+- [Martech Resources](https://stensul.com/category/martech): Provides insights, tools, and resources on marketing technology and email creation strategies.
+- [Governed Creation Overview](https://stensul.com/blog/introducing-governed-creation): Promote Governed Creation™ platform for compliant, scalable enterprise email and landing page creation
+- [Marketing Resource Hub](https://stensul.com/resources): Provides resources, webinars, and guides to enhance marketing strategies and operational efficiencies.
+- [Stensul AI Platform](https://stensul.com/ai): Leverage AI-powered email marketing workflows with compliance, collaboration, and speed.
+- [Stensul Adobe Integrations](https://stensul.com/adobe-integrations/): Promote Stensul's integrations with the Adobe Experience Cloud ecosystem — including Adobe Campaign, Adobe Experience Manager (AEM), Adobe Journey Optimizer (AJO), Adobe GenStudio for Performance Marketing, and Adobe Workfront — to help enterprise teams create, collaborate on, and launch on-brand emails and landing pages faster, with built-in governance, fewer handoffs, and less rework.
+- [Stensul Salesforce Integrations](https://stensul.com/salesforce-integrations/): Promote Stensul's integrations with the Salesforce ecosystem — including Salesforce Marketing Cloud (SFMC), Salesforce Pardot, and Salesforce Dynamic Content — to help enterprise marketing teams create, collaborate on, and activate on-brand email campaigns faster, with built-in governance and fewer handoffs.
+- [Request a demo](https://stensul.com/request-a-demo-v2/): Promote custom demo with Stensul to see how Governed Creation™ removes friction from campaign creation by embedding guardrails directly into the workflow.

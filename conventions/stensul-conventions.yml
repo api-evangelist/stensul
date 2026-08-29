@@ -1,0 +1,97 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://stensul.com/our-integrations/api-endpoints/,
+  https://stensul.com/integrations/stensul-content-api/,
+  https://stensul.com/integrations/stensul-user-api/ — plus the negative result of
+  the STEP 0b contract-discovery probes, 2026-08-29.
+name: Stensul API Conventions
+completeness: minimal
+completeness_note: >-
+  Stensul publishes no API reference and no machine-readable contract, so almost
+  every cross-cutting semantic below is UNKNOWN rather than absent. An unknown
+  here is a documentation gap on Stensul's side, not a claim that the behaviour
+  does not exist in the product.
+auth_style:
+  style: oauth2-client-credentials
+  confidence: medium
+  detail: >-
+    "OAuth server-to-server authentication" plus IP address allowlisting on both
+    the Content API and the User API. See authentication/stensul-authentication.yml.
+idempotency:
+  supported: unknown
+  header: null
+  scope: null
+  retention: null
+  note: >-
+    No idempotency key, retry semantics, or replay guidance is published. No
+    `Idempotency` pointer is emitted — the artifact records the question, not an
+    answer.
+pagination:
+  style: unknown
+  params: []
+  response_fields: []
+  note: Not published.
+field_expansion:
+  supported: unknown
+  note: Not published.
+sparse_fieldsets:
+  supported: unknown
+  note: Not published.
+metadata:
+  supported: unknown
+  note: Not published.
+request_id_tracing:
+  header: unknown
+  note: >-
+    No request-id or correlation header is documented, so a caller has no
+    published handle to quote to support when a call fails.
+versioning:
+  scheme: unknown
+  note: See lifecycle/stensul-lifecycle.yml.
+error_envelope:
+  shape: unknown
+  rfc9457: unknown
+  note: >-
+    No error reference is published, so errors/ is not written — there are no
+    problem types to catalog and none may be invented.
+rate_limit_signaling:
+  headers: []
+  status_on_exhaustion: unknown
+  note: See rate-limits/stensul-rate-limits.yml.
+reversibility:
+  grade: unknown
+  applicable: true
+  applicable_reason: >-
+    The APIs are not read-only. The User API explicitly de-provisions users —
+    a destructive write — and the Content API distributes content to downstream
+    systems, which is an outbound action with real effect.
+  reversal_operations: []
+  windows: []
+  note: >-
+    Stensul publishes no reversal operation, no undo, and no restore window for
+    either API. Specifically: nothing states whether a user de-provisioned
+    through the User API can be restored, or within what window, and nothing
+    states whether content already pushed through the Content API can be
+    recalled. Because no reference exists, this is graded `unknown` rather than
+    `documented` or `verified` — a reversal path may well exist in the product
+    and simply not be written down. NO window is asserted here, because inventing
+    one for a de-provisioning API is exactly the error that would cost a customer
+    a real account.
+  what_would_close_this: >-
+    A single sentence in the User API reference stating whether de-provisioning
+    is soft-delete or hard-delete, and if soft, for how long the record is
+    restorable.
+dry_run_mode:
+  supported: unknown
+  note: Not published.
+sandbox:
+  present: false
+  note: >-
+    No test environment, test credentials, or sandbox tenant is publicly
+    documented. sandbox/ is therefore not written.
+cross_links:
+  authentication: authentication/stensul-authentication.yml
+  lifecycle: lifecycle/stensul-lifecycle.yml
+  rate_limits: rate-limits/stensul-rate-limits.yml
+  conformance: conformance/stensul-conformance.yml

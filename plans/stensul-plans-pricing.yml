@@ -1,0 +1,23 @@
+generated: '2026-08-29'
+method: searched
+source: https://stensul.com/stensul-pricing-request/
+name: Stensul Plans and Pricing
+plan_count: 0
+pricing_model: contact-sales
+currency: null
+plans: []
+note: >-
+  Stensul publishes no pricing tiers, no list price, and no self-service signup.
+  https://stensul.com/pricing/ redirects (HTTP 200 after redirect) to
+  https://stensul.com/landing-pages/pricing-request-thank-you/, and the canonical
+  pricing page https://stensul.com/stensul-pricing-request/ is a "request pricing"
+  form. There is no free tier, no trial price, and no published quota, overage or
+  per-seat rate. This is an enterprise contact-sales motion end to end — a buyer
+  cannot estimate cost, and an agent cannot transact.
+evidence:
+- url: https://stensul.com/stensul-pricing-request/
+  status: 200
+  finding: pricing-request form, no tiers
+- url: https://stensul.com/pricing/
+  status: 200
+  finding: redirects to a pricing-request thank-you landing page

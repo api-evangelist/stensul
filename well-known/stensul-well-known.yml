@@ -1,0 +1,205 @@
+generated: '2026-08-29'
+method: probed
+source: >-
+  Direct HTTP probes of /.well-known/* on every Stensul host discovered during
+  enrichment (stensul.com, app.stensul.com, helpdesk.stensul.com,
+  trust.stensul.com, status.stensul.com), 2026-08-29.
+name: Stensul Well-Known Documents
+description: >-
+  Stensul's own apex host (stensul.com) serves NO /.well-known documents — every
+  path 404s against the WordPress marketing site. Two subdomains do return a real
+  RFC 9116 security.txt, but BOTH are the SaaS vendor's own document, not
+  Stensul's: status.stensul.com is an Atlassian Statuspage (Canonical:
+  https://www.atlassian.com/.well-known/security.txt) and helpdesk.stensul.com is
+  an Intercom help center (Canonical: https://app.intercom.com/.well-known/security.txt).
+  Neither names a Stensul contact or a Stensul disclosure policy, so neither is
+  credited to Stensul — no SecurityTxt and no WellKnown pointer is emitted from
+  this probe. app.stensul.com and trust.stensul.com are single-page applications
+  that answer HTTP 200 with an HTML shell for EVERY /.well-known path; those rows
+  are recorded as misses, not hits.
+
+hosts:
+  - host: stensul.com
+    note: Apex marketing site (WordPress). Serves no well-known documents.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+
+  - host: app.stensul.com
+    note: >-
+      Application host behind Stensul's own WAF. SPA catch-all — returns HTTP 200
+      with an identical 12,166-byte HTML shell for every path probed, including
+      /openapi.json and /graphql. Treated as a miss on every row.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/agent.json
+        status: 200
+        file: null
+        result: html-shell
+
+  - host: helpdesk.stensul.com
+    note: >-
+      Intercom-hosted help center (CNAME us.intercomhelpcenter.com). The served
+      security.txt is Intercom's, canonical at app.intercom.com — contact
+      security@intercom.com, policy Bugcrowd standard disclosure terms. Saved for
+      the record; NOT credited to Stensul.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: stensul-helpdesk-security.txt
+        result: vendor-document
+        canonical: https://app.intercom.com/.well-known/security.txt
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+
+  - host: trust.stensul.com
+    note: >-
+      Vanta-hosted trust center (CNAME cname.vantatrust.com). SPA catch-all —
+      HTTP 200 with the same 5,435-byte HTML shell on every path. Recorded as
+      misses.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        result: html-shell
+      - path: /.well-known/agent.json
+        status: 200
+        file: null
+        result: html-shell
+
+  - host: status.stensul.com
+    note: >-
+      Atlassian Statuspage (CNAME stspg-customer.com). The served security.txt is
+      Atlassian's own PGP-signed document, canonical at www.atlassian.com —
+      contact security@atlassian.com. Saved for the record; NOT credited to Stensul.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: stensul-status-security.txt
+        result: vendor-document
+        canonical: https://www.atlassian.com/.well-known/security.txt
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+
+summary:
+  hosts_probed: 5
+  paths_probed: 40
+  real_documents_found: 2
+  real_documents_owned_by_stensul: 0
+  pointer_emitted: false
+  pointer_note: >-
+    No WellKnown and no SecurityTxt pointer is wired into apis.yml. Both 200s
+    that carried a real document are the SaaS vendor's (Intercom, Atlassian);
+    Stensul's own apex serves nothing. Asserting a Stensul-served well-known
+    surface on this evidence would be a false claim.

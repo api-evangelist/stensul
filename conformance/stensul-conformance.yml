@@ -1,0 +1,87 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://stensul.com/integrations/stensul-user-api/,
+  https://stensul.com/security-trust-center/,
+  https://stensul.com/integrations/stensul-saml-integration/ — and live probes of
+  app.stensul.com for a SCIM ServiceProviderConfig, 2026-08-29.
+name: Stensul Conformance
+contract_available: false
+contract_note: >-
+  No OpenAPI, AsyncAPI, GraphQL SDL, WSDL or .proto is published, so nothing
+  below is derived from a contract. Every entry is read from Stensul's own prose
+  and each records honestly whether that prose was verifiable.
+standards:
+- id: oauth2
+  conforms: true
+  confidence: medium
+  evidence: >-
+    Stensul states both the Content API and the User API use "OAuth
+    server-to-server authentication"
+    (https://stensul.com/integrations/stensul-content-api/). Grant type, token
+    endpoint and scopes are not published, so conformance is asserted by the
+    vendor and not independently verifiable.
+- id: oidc
+  conforms: true
+  confidence: high
+  evidence: >-
+    "SSO (OAuth2/OIDC & SAML 2.0)" for application sign-in —
+    https://stensul.com/security-trust-center/. This covers human authentication
+    to the product, not API access.
+- id: saml2
+  conforms: true
+  confidence: high
+  evidence: >-
+    Dedicated SAML 2.0 integration page —
+    https://stensul.com/integrations/stensul-saml-integration/ — plus published
+    Okta, Entra ID, Ping Identity, Duo and Google Workspace integrations.
+- id: scim
+  conforms: unverified
+  confidence: low
+  evidence: >-
+    Stensul's User API page states it supports "SCIM provisioning standards"
+    (https://stensul.com/integrations/stensul-user-api/). NOT VERIFIED: no SCIM
+    version is named, no schema URN
+    (urn:ietf:params:scim:schemas:core:2.0:User) appears in any public Stensul
+    material, and a probe of
+    https://app.stensul.com/scim/v2/ServiceProviderConfig returns the
+    application's SPA HTML shell (HTTP 200, text/html), not a SCIM
+    ServiceProviderConfig document. Recorded as an unverified vendor claim.
+- id: rfc9457
+  conforms: false
+  confidence: high
+  evidence: No error format is published; no application/problem+json surface exists publicly.
+- id: idempotency
+  conforms: unknown
+  confidence: low
+  evidence: Not published — see conventions/stensul-conventions.yml.
+- id: pagination
+  conforms: unknown
+  confidence: low
+  evidence: Not published.
+- id: soc2
+  conforms: true
+  confidence: high
+  evidence: >-
+    "SOC2 Type 2 — audited annually by and complies with the AICPA standards for
+    Controls at a Service Organization" —
+    https://stensul.com/security-trust-center/. Report is available through the
+    Vanta-hosted trust center at https://trust.stensul.com/.
+domain_standard:
+  market: marketing technology / email creation and governance
+  candidate: scim
+  candidate_status: unverified
+  finding: >-
+    SCIM is the one recognised cross-vendor standard Stensul's surface touches,
+    and it is claimed for the User API. Because the 0.12.0 domain-standard check
+    reads the CONTRACT rather than a prose claim — a schema URN, a
+    ServiceProviderConfig, a discoverable endpoint — and Stensul publishes none
+    of those, this is recorded as a claim awaiting evidence rather than as a
+    conformance. Nothing is awarded on it.
+  note: >-
+    The email/martech market has no widely adopted content-interchange standard
+    that Stensul's Content API could declare. AMP for Email and MJML are
+    authoring formats, not integration contracts. REWARD-ONLY check: Stensul is
+    not penalised for a standard its market does not have.
+compliance_published: true
+compliance_pointer: https://stensul.com/security-trust-center/

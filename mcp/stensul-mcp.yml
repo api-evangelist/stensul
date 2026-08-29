@@ -1,0 +1,32 @@
+generated: '2026-08-29'
+method: probed
+source: >-
+  Searches for a Stensul MCP server across the public web, npm
+  (registry.npmjs.org search "stensul"), github.com/stensul, and direct probes of
+  app.stensul.com and stensul.com for /mcp, /.well-known/ai-plugin.json and
+  /.well-known/agent-card.json, 2026-08-29.
+name: Stensul MCP
+status: none
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+tools: []
+tools_note: >-
+  No candidate tool list is derived. Deriving one requires an OpenAPI to ground
+  operations in, and Stensul publishes no machine-readable contract — see
+  x-coverage in apis.yml. Inventing tool names from the marketing description of
+  the Content and User APIs would produce an agent surface Stensul does not have.
+findings:
+- No hosted or remote MCP endpoint was found for Stensul.
+- No stdio MCP package exists on npm or PyPI. The eleven first-party `stensul-*` npm packages are empty namespace placeholders (see packages/stensul-packages.yml).
+- github.com/stensul has 0 public repositories.
+- stensul.com/.well-known/ai-plugin.json returns 404.
+- app.stensul.com answers HTTP 200 with an identical HTML shell on every path probed, so no 200 from that host is treated as a hit.
+pointer_emitted: false
+pointer_note: >-
+  No `MCPServer` pointer is wired into apis.yml. mode is `none`; asserting an MCP
+  surface here would credit Stensul with an agent endpoint that does not exist.

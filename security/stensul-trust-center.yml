@@ -1,0 +1,51 @@
+generated: '2026-08-29'
+method: searched
+source: https://stensul.com/security-trust-center/
+name: Stensul Trust Center
+trust_center:
+  url: https://trust.stensul.com/
+  platform: Vanta
+  platform_evidence: >-
+    trust.stensul.com is a CNAME to 69125d98e3c54bf4327d5701.cname.vantatrust.com.
+    The page is a client-side single-page application; the served HTML is a
+    5,435-byte shell, so certification detail below is read from Stensul's own
+    server-rendered security page rather than from the SPA.
+  http_status: 200
+security_page:
+  url: https://stensul.com/security-trust-center/
+  http_status: 200
+certifications:
+- name: SOC 2 Type 2
+  status: certified
+  evidence: >-
+    "Audited annually by and complies with the AICPA standards for Controls at a
+    Service Organization" — https://stensul.com/security-trust-center/
+  scope: annual
+not_claimed:
+- ISO 27001
+- PCI DSS
+- HIPAA
+- FedRAMP
+- TX-RAMP
+not_claimed_note: >-
+  None of these appear on Stensul's public security page or in any public
+  Stensul material found during this pass. Absence here means "not published",
+  not "not held".
+controls_published:
+- area: authentication
+  detail: SSO via OAuth 2.0 / OpenID Connect and SAML 2.0
+- area: encryption
+  detail: TLS/HTTPS in transit with 2048-bit keys; encryption at rest
+- area: infrastructure
+  detail: Hosted on Google Cloud Platform and Amazon Web Services
+- area: network
+  detail: Globally distributed DDoS protection; intrusion detection system (IDS)
+- area: access
+  detail: Two-factor authentication required for server access
+- area: personnel
+  detail: Mandatory employee security training
+notes: >-
+  Stensul publishes a certification posture and a control summary but no
+  vulnerability disclosure policy, no security.txt on its own apex, and no bug
+  bounty program — see security/stensul-vulnerability-disclosure.yml for that
+  negative result.

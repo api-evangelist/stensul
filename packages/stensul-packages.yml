@@ -1,0 +1,158 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  registry.npmjs.org search + per-package metadata endpoints, pypi.org,
+  api.github.com/orgs/stensul, 2026-08-29.
+name: Stensul Packages
+summary: >-
+  Stensul publishes NO client SDK on any public package registry. Eleven npm
+  packages under the `stensul-*` name prefix ARE first-party — every one is
+  maintained by three @stensul.com accounts — but all eleven are empty
+  namespace placeholders: version 1.0.0 (1.0.1 for one), a single file, 207-219
+  bytes unpacked, no description, no repository, no dependencies, all published
+  within two days in January 2024. This is the signature of defensive
+  dependency-confusion registration of internal package names, not a distributed
+  client library. They are recorded here because they are genuinely Stensul's and
+  a consumer searching npm for "stensul" will find them and may mistake
+  `stensul-sdk` for a real SDK — it is not.
+registries_checked:
+- registry: npm
+  result: 11 first-party placeholder packages, no SDK
+- registry: PyPI
+  result: no package named stensul (404)
+- registry: RubyGems
+  result: none found
+- registry: Maven Central
+  result: none found
+- registry: NuGet
+  result: none found
+- registry: crates.io
+  result: none found
+- registry: pkg.go.dev
+  result: none found
+- registry: GitHub
+  result: >-
+    github.com/stensul is a real first-party organization (created 2017-01-11,
+    name "Stensul", blog https://stensul.com) with 0 public repositories and 0
+    public gists.
+sdk_count: 0
+official_sdk_count: 0
+packages:
+- name: stensul-sdk
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-sdk
+  official: true
+  official_evidence: maintainers nicolasd@stensul.com, marcelo.forclaz@stensul.com, gabriel@stensul.com
+  version: 1.0.0
+  published: '2024-01-10'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 207
+  note: >-
+    Empty placeholder. Despite the name, contains no client code — a single
+    207-byte file, no description, no repository, no dependencies.
+- name: stensul-cli
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-cli
+  official: true
+  version: 1.0.0
+  published: '2024-01-10'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 207
+  note: Empty placeholder; not a working CLI.
+- name: stensul-service
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-service
+  official: true
+  version: 1.0.0
+  published: '2024-01-10'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 211
+  note: Empty placeholder.
+- name: stensul-service-auth
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-service-auth
+  official: true
+  version: 1.0.0
+  published: '2024-01-10'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 216
+  note: Empty placeholder.
+- name: stensul-connector-utils
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-connector-utils
+  official: true
+  version: 1.0.0
+  published: '2024-01-10'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 219
+  note: Empty placeholder.
+- name: stensul-errors
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-errors
+  official: true
+  version: 1.0.0
+  published: '2024-01-10'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 210
+  note: Empty placeholder.
+- name: stensul-sign
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-sign
+  official: true
+  version: 1.0.0
+  published: '2024-01-10'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 208
+  note: Empty placeholder.
+- name: stensul-tep
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-tep
+  official: true
+  version: 1.0.0
+  published: '2024-01-10'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 207
+  note: Empty placeholder.
+- name: stensul-ui
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-ui
+  official: true
+  version: 1.0.1
+  published: '2024-01-11'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 213
+  note: Empty placeholder; the only one bumped past 1.0.0.
+- name: stensul-ui-doc
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-ui-doc
+  official: true
+  version: 1.0.0
+  published: '2024-01-10'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 210
+  note: Empty placeholder.
+- name: stensul-npm-audit
+  registry: npm
+  url: https://www.npmjs.com/package/stensul-npm-audit
+  official: true
+  version: 1.0.0
+  published: '2024-01-10'
+  is_sdk: false
+  file_count: 1
+  unpacked_size: 213
+  note: Empty placeholder.
+pointer_note: >-
+  A `Packages` pointer is wired into apis.yml because these packages exist and
+  are first-party. NO `SDKs` pointer is emitted: sdk_count is 0 and none of the
+  eleven packages contains a client library. Crediting these as SDKs would score
+  points for shipping nothing.

@@ -1,0 +1,32 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://stensul.com/our-integrations/api-endpoints/,
+  https://stensul.com/integrations/stensul-content-api/,
+  https://stensul.com/integrations/stensul-user-api/,
+  https://helpdesk.stensul.com/en/
+name: Stensul Rate Limits
+limit_count: 0
+rate_limits: []
+response_headers: []
+status_on_exhaustion: null
+retry_after: unknown
+note: >-
+  No rate limits are published for either the Stensul Content API or the Stensul
+  User API. Neither integration page names a request ceiling, a window, a burst
+  allowance, or a throttling status code, and no public API reference exists in
+  which to look. The response headers an agent would need at runtime
+  (X-RateLimit-*, RateLimit-*, Retry-After) could not be observed either: both
+  APIs sit behind OAuth server-to-server auth AND an IP allowlist, so there is no
+  unauthenticated response to inspect from an unregistered address. An honest
+  zero — checked, nothing published.
+evidence:
+- url: https://stensul.com/our-integrations/api-endpoints/
+  status: 200
+  finding: names two APIs, publishes no limits
+- url: https://stensul.com/integrations/stensul-content-api/
+  status: 200
+  finding: no limits stated
+- url: https://stensul.com/integrations/stensul-user-api/
+  status: 200
+  finding: no limits stated

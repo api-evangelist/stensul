@@ -1,23 +1,158 @@
 aid: stensul
 name: Stensul
-description: 'Stensul is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Stensul is an enterprise email and landing page creation platform — it calls the
+  category "Governed Creation" — used by large marketing organizations to build,
+  review, approve and deploy campaign assets without hand-coding HTML for every
+  send. Marketers assemble emails and landing pages from brand-locked, developer-built
+  modules; the platform runs the review and approval workflow, then pushes the
+  finished asset into the ESP or marketing automation platform of record (Salesforce
+  Marketing Cloud, Marketo, Adobe Campaign, Adobe Journey Optimizer, Oracle Eloqua,
+  Braze, Iterable, Acoustic, Responsys, Epsilon PeopleCloud, Zeta and others).
+  Stensul markets two enterprise APIs — a Content API for retrieving and distributing
+  finished email content to any downstream system, and a User API for automating
+  user provisioning and de-provisioning — both described as using OAuth
+  server-to-server authentication with IP address allowlisting, with the User API
+  additionally claiming support for SCIM provisioning standards. Neither API has a
+  public reference, base URL, or machine-readable specification published on
+  stensul.com; the endpoint pages are marketing descriptions that route to a sales
+  conversation. The company was founded in 2015 and is headquartered in New York.
+image: https://stensul.com/wp-content/uploads/2025/10/Stensul-Logomark-Black-RGB.svg
 url: https://raw.githubusercontent.com/api-evangelist/stensul/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-2026-08-29
 specificationVersion: '0.20'
 created: '2026-08-29'
 modified: '2026-08-29'
 tags:
 - Company
-apis: []
+- Email
+- Email Marketing
+- Marketing
+- Marketing Automation
+- Content Management
+- Landing Pages
+- Marketing Operations
+- Enterprise Software
+- Governance
+- Collaboration
+- SaaS
+apis:
+- name: Stensul Content API
+  description: >-
+    Enterprise API for retrieving finalized Stensul email content and distributing
+    it to any platform in a customer's ecosystem, removing the manual export step
+    between Stensul and the downstream ESP/MAP. Stensul documents it publicly as
+    using OAuth server-to-server authentication together with IP address
+    allowlisting. No endpoint reference, base URL, or machine-readable contract is
+    published on the public web; Stensul states a customer team builds and hosts
+    the custom connection.
+  humanURL: https://stensul.com/integrations/stensul-content-api/
+  tags:
+  - Content
+  - Email
+  - Integration
+  properties:
+  - type: Authentication
+    url: authentication/stensul-authentication.yml
+  - type: RateLimits
+    url: rate-limits/stensul-rate-limits.yml
+- name: Stensul User API
+  description: >-
+    Enterprise API for automating the provisioning, management and de-provisioning
+    of Stensul users and their roles and permissions. Stensul's public integration
+    page states it supports SCIM provisioning standards alongside OAuth
+    server-to-server authentication and IP address allowlisting. The SCIM schema
+    version, service provider configuration endpoint, and base URL are not
+    published publicly, so the SCIM claim is recorded as a vendor assertion rather
+    than a verified contract conformance.
+  humanURL: https://stensul.com/integrations/stensul-user-api/
+  tags:
+  - Identity
+  - Users
+  - Provisioning
+  - SCIM
+  properties:
+  - type: Authentication
+    url: authentication/stensul-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/stensul-trust-center.yml
 - type: Website
-  url: https://forgeglobal.com/stensul_stock/
+  url: https://stensul.com/
+- type: GitHubOrganization
+  url: https://github.com/stensul
+- type: Documentation
+  url: https://helpdesk.stensul.com/en/
+- type: Support
+  url: https://helpdesk.stensul.com/en/
+- type: Blog
+  url: https://stensul.com/blog/
+- type: BlogRSS
+  url: https://stensul.com/feed/
+- type: Pricing
+  url: https://stensul.com/stensul-pricing-request/
+- type: PrivacyPolicy
+  url: https://stensul.com/privacy-policy/
+- type: StatusPage
+  url: https://status.stensul.com/
+- type: Compliance
+  url: https://stensul.com/security-trust-center/
+- type: LLMsTxt
+  url: llms/stensul-llms.txt
+- type: Lifecycle
+  url: lifecycle/stensul-lifecycle.yml
+- type: Packages
+  url: packages/stensul-packages.yml
+- type: Authentication
+  url: authentication/stensul-authentication.yml
+- type: Conventions
+  url: conventions/stensul-conventions.yml
+- type: Conformance
+  url: conformance/stensul-conformance.yml
+- type: DomainSecurity
+  url: security/stensul-domain-security.yml
+- type: Plans
+  url: plans/stensul-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/stensul-rate-limits.yml
+
+x-enrichment:
+  date: '2026-08-29'
+  status: minimal
+  artifacts_added: 15
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Stensul markets two named enterprise APIs on
+    https://stensul.com/our-integrations/api-endpoints/ — a Content API and a User
+    API — but every route from those pages ends at "Request a demo": there is no
+    developer portal, no api./docs./developer. subdomain (all three fail DNS
+    resolution), no API reference in the public Intercom help center, which
+    exposes exactly one collection ("Integrations"), and no base URL, endpoint,
+    scope or error published anywhere a machine can read.
+  evidence:
+    - url: https://stensul.com/our-integrations/api-endpoints/
+      status: 200
+    - url: https://stensul.com/integrations/stensul-content-api/
+      status: 200
+    - url: https://stensul.com/integrations/stensul-user-api/
+      status: 200
+    - url: https://docs.stensul.com/
+      status: 0
+    - url: https://developer.stensul.com/
+      status: 0
+    - url: https://api.stensul.com/
+      status: 0
+    - url: https://helpdesk.stensul.com/en/
+      status: 200
+  checked: '2026-08-29'
