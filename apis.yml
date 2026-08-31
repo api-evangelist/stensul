@@ -38,6 +38,19 @@ tags:
 - Enterprise Software
 - Governance
 - Collaboration
+- Software-as-a-Service
+tags_raw:
+- Company
+- Email
+- Email Marketing
+- Marketing
+- Marketing Automation
+- Content Management
+- Landing Pages
+- Marketing Operations
+- Enterprise Software
+- Governance
+- Collaboration
 - SaaS
 apis:
 - name: Stensul Content API
@@ -70,6 +83,11 @@ apis:
     than a verified contract conformance.
   humanURL: https://stensul.com/integrations/stensul-user-api/
   tags:
+  - Identity
+  - User
+  - Provisioning
+  - SCIM
+  tags_raw:
   - Identity
   - Users
   - Provisioning
