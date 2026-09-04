@@ -17,6 +17,20 @@ description: >-
   public reference, base URL, or machine-readable specification published on
   stensul.com; the endpoint pages are marketing descriptions that route to a sales
   conversation. The company was founded in 2015 and is headquartered in New York.
+accessModel:
+  pricing: unknown
+  onboarding: open
+  trial: false
+  try_now: false
+  public: true
+  label: Open access
+  confidence: medium
+  source:
+  - authentication
+  - rate-limits
+  - security
+  generated: '2026-09-02'
+  method: derived
 image: https://stensul.com/wp-content/uploads/2025/10/Stensul-Logomark-Black-RGB.svg
 url: https://raw.githubusercontent.com/api-evangelist/stensul/refs/heads/main/apis.yml
 x-type: company
