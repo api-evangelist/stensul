@@ -2,6 +2,13 @@
   "repo": "stensul",
   "feeds": [
     {
+      "source": "https://stensul.com/blog/",
+      "feed_url": "https://stensul.com/blog/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
       "source": "https://helpdesk.stensul.com/en/",
       "feed_url": "https://helpdesk.stensul.com/en/",
       "title": "",
@@ -9,13 +16,13 @@
       "method": "none"
     },
     {
-      "source": "https://stensul.com/blog/",
+      "source": "https://stensul.com/feed/",
       "feed_url": "https://stensul.com/feed/",
       "title": "",
       "saved": 0,
-      "method": "discovered"
+      "method": "feed"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-08-30T22:33:40Z"
+  "post_count": 12,
+  "fetched": "2026-09-06T19:17:18Z"
 }
