@@ -1,0 +1,26 @@
+generated: '2026-10-23'
+method: searched
+checked:
+- adobe-experience-cloud/integrations/adobe-experience-cloud-integration-edges.yml
+source:
+- adobe-experience-cloud/integrations/adobe-experience-cloud-integration-edges.yml
+edges:
+- partner_name: Adobe Experience Cloud (own)
+  partner: adobe-experience-cloud
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://exchange.adobe.com/apps/ec/abr9sp5o98
+  mirror_of: adobe-experience-cloud/integrations/adobe-experience-cloud-integration-edges.yml
+  apps:
+  - Stensul for GenStudio for PM
+  - Stensul Governed Creation Platform
+  - Stensul for GenStudio for Performance Marketing
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Exchange Experience Cloud listing (Experience Platform, GenStudio)
